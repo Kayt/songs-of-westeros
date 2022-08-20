@@ -33,4 +33,9 @@ public class PlayerAnimation : MonoBehaviour
             sr.flipX = true;
     }
 
+    public void PlayAnimationWithName(string animName)
+    {
+        anim.Play(animName);
+    }
+
 } // class

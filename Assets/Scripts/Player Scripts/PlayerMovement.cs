@@ -127,4 +127,23 @@ public class PlayerMovement : MonoBehaviour
             canDoublejump = true;
     }
 
+    void FromjumpToWalkOrIdle()
+    {
+        if(jumped && myBody.velocity.y == 0f)
+        {
+            jumped = false;
+
+            if(Mathf.Abs((int)myBody.velocity.x) > 0f)
+            {
+                //we are walking
+                playerAnim.PlayAnimationWithName(TagManager.WALK_ANIMATION);
+            }
+            else
+            {
+                //we are idle
+                playerAnim.PlayAnimationWithName(TagManager.IDLE_ANIMATION);
+            }
+        }
+    }
+
 } // class 
